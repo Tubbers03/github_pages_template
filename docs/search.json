@@ -62,28 +62,28 @@
     "href": "about.html",
     "title": "About Me",
     "section": "",
-    "text": "Write a brief introduction about yourself here. Include:\n\nYour academic background\nYour interest in data science\nYour career goals\nAny relevant experience or projects"
+    "text": "Write a brief introduction about yourself here. Include:\n\nJunior studying Statistics with an emphasis in Data Science at BYU\nI love setting up, cleaning, analyzing, and creating datasets/data to make things clearer and be able to draw conclusions\nI want to be a Data Scientist or Sports Statistician\nI compared the 2024 nba season with the 1994 nba season to see the difference in three point percentage"
   },
   {
     "objectID": "about.html#background",
     "href": "about.html#background",
     "title": "About Me",
     "section": "",
-    "text": "Write a brief introduction about yourself here. Include:\n\nYour academic background\nYour interest in data science\nYour career goals\nAny relevant experience or projects"
+    "text": "Write a brief introduction about yourself here. Include:\n\nJunior studying Statistics with an emphasis in Data Science at BYU\nI love setting up, cleaning, analyzing, and creating datasets/data to make things clearer and be able to draw conclusions\nI want to be a Data Scientist or Sports Statistician\nI compared the 2024 nba season with the 1994 nba season to see the difference in three point percentage"
   },
   {
     "objectID": "about.html#education",
     "href": "about.html#education",
     "title": "About Me",
     "section": "Education",
-    "text": "Education\n\n[Your Degree] - [University Name], [Year]\nRelevant Coursework: Statistics, Data Analysis, Programming, etc."
+    "text": "Education\n\n[Your Degree] - [BYU], [2027]\nRelevant Coursework: Statistics, Data Analysis, Python, Probability."
   },
   {
     "objectID": "about.html#skills-interests",
     "href": "about.html#skills-interests",
     "title": "About Me",
     "section": "Skills & Interests",
-    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming: Python\nData Analysis: Pandas, NumPy\nVisualization: Matplotlib, Seaborn\nMachine Learning: Scikit-learn\nTools: Jupyter Notebooks, Git/GitHub\n\n\n\nAreas of Interest\n\n[Your specific interests, e.g., environmental data, healthcare analytics, finance, etc.]\n[Other areas you’re curious about]"
+    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming: Python\nData Analysis: Pandas, NumPy\nVisualization: Matplotlib, Seaborn\nMachine Learning: Scikit-learn\nTools: Jupyter Notebooks, Git/GitHub\n\n\n\nAreas of Interest\n\nFootball, Basketball, and Baseball\nArtificial Intelligence"
   },
   {
     "objectID": "about.html#goals",
@@ -97,7 +97,7 @@
     "href": "about.html#contact",
     "title": "About Me",
     "section": "Contact",
-    "text": "Contact\n\nEmail: your.email@example.com\nGitHub: github.com/your-username\nLinkedIn: linkedin.com/in/your-profile\n\n\nThis portfolio showcases my learning progress and projects completed during my data science studies."
+    "text": "Contact\n\nEmail: tubbers03@yahoo.com\nGitHub: github.com/your-username\nLinkedIn: linkedin.com/in/your-profile\n\n\nThis portfolio showcases my learning progress and projects completed during my data science studies."
   },
   {
     "objectID": "projects/data-acquisition.html",
@@ -118,5 +118,12 @@
     "crumbs": [
       "Final Project"
     ]
+  },
+  {
+    "objectID": "Blog.html",
+    "href": "Blog.html",
+    "title": "Does The Home Sports Team Have the Advantage?",
+    "section": "",
+    "text": "fixme"
   }
 ]
