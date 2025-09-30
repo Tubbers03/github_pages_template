@@ -7,6 +7,10 @@ format:
 jupyter: python3
 ---
 # Is Home Field Advantage really an advantage?
+![Fans cheering in a home stadium, showing the energy of home advantage](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gettyimages.com%2Fphotos%2Fcheering-sports-fans%3Fpage%3D2&psig=AOvVaw3xFREX9BTYxBBdKAd7k5CE&ust=1759294964306000&source=images&cd=vfe&opi=89978449&ved=0CBYQjRxqFwoTCMC3_M_a_48DFQAAAAAdAAAAABAE`)
+*Figure 1: Fans cheering at a home game, illustrating the boost of home field advantage.*
+
+
 
 ## Introduction: Is the "Home Advantage" Real?
 Growing up, I always heard that the home team had a major chance of winning the game because of plenty of factors: 
@@ -16,7 +20,7 @@ Growing up, I always heard that the home team had a major chance of winning the 
 So, I wanted to see if home field actually made a *difference* in the win column.
 
 ## Dataset Overview
-To begin becoming someone who uses data, you fisrt need to obtain your data. You want data that is useful to find the answer to youre question. I went to statmuse and got the standings data from the NFL, NBA, and MLB. I then put the data into data frames.
+To begin becoming someone who uses data, you first need to obtain your data. You want data that is useful to find the answer to your question. I went to statmuse and got the standings data from the NFL, NBA, and MLB. I then put the data into data frames.
 ```{python}
 #| echo: false
 #| output: false
@@ -163,6 +167,7 @@ print(mlb_df.head())
 
 
 ## Results in Table Format
+
 | Sport | Home Win % (2024) |
 |-------|--------------------|
 | NFL   | 0.533              |
