@@ -14,9 +14,9 @@ jupyter: python3
 
 ## Introduction: Is the "Home Advantage" Real?
 Growing up, I always heard that the home team had a major chance of winning the game because of plenty of factors: 
-- **Fans to cheer them on** 
-- **It's the facility they practice in**
-- **The team gets to sleep in their own beds and city**
++ **Fans to cheer them on** 
++ **It's the facility they practice in**
+-+**The team gets to sleep in their own beds and city**
 So, I wanted to see if home field actually made a *difference* in the win column.
 
 ## Dataset Overview
