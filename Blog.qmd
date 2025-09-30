@@ -8,7 +8,7 @@ jupyter: python3
 ---
 # Is Home Field Advantage really an advantage?
 ![Fans cheering in a home stadium, showing the energy of home advantage](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gettyimages.com%2Fphotos%2Fcheering-sports-fans%3Fpage%3D2&psig=AOvVaw3xFREX9BTYxBBdKAd7k5CE&ust=1759294964306000&source=images&cd=vfe&opi=89978449&ved=0CBYQjRxqFwoTCMC3_M_a_48DFQAAAAAdAAAAABAE)
-*Figure 1: Fans cheering at a home game, illustrating the boost of home field advantage.*
+*Fans cheering at a home game, illustrating the boost of home field advantage.*
 
 
 
@@ -173,6 +173,8 @@ print(mlb_df.head())
 | NFL   | 0.533              |
 | NBA   | 0.543              |
 | MLB   | 0.521              |
+
+As you can see, NBA had the highest home win rate at around **54.5%**, with the NFL close behind at around **53%**, and the MLB coming in at around **52%**.
 ## Visualizing the Home Advantage
 ```{python}
 sports = ['NFL', 'NBA', 'MLB']
@@ -193,10 +195,17 @@ plt.show()
 ![Home Win Percentage by Sport (2024 Season)](home_win_2024_lineplot.png)
 
 ```
+
 ## A Bit of Math: Interpreting Win Rate
+So, to get the win rate I added all the wins from each team at home, and then I divided the total wins by the total number of games.
 
 ## Conclusion: The Advantage Is Real (Sometimes)
+Looking at the data, it's clear that home teams do tend to win slightly more often across all three major leagues. However, **this advantage isn't absolute**. It depends heavily on the team. Some teams had losing records overall but were surprisingly strong at home. Others were consistent regardless of location. And, some strong teams rarely lost at home. This suggests that while playing at home may help, it’s not a guarantee of success — the strength of the team still matters more.
 
 ## Call to Action: Dig Deeper!
-
+If you're curious about how much home or away performance contributes to a team's success, the full data is right here in the project. Dive into the dataframes and ask your own questions:
+- Which team had the biggest difference between home and road records?
+- Are bad teams just worse on the road, or bad everywhere?
+- Which divisions or conferences have the strongest home field trends?
+Use the tools of data science — slicing, filtering, visualizing and start exploring!
 
