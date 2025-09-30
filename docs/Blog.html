@@ -191,7 +191,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#fixme" id="toc-fixme" class="nav-link active" data-scroll-target="#fixme">fixme</a></li>
+  <li><a href="#do-home-teams-really-have-an-advantage-a-quick-look-with-pandas" id="toc-do-home-teams-really-have-an-advantage-a-quick-look-with-pandas" class="nav-link active" data-scroll-target="#do-home-teams-really-have-an-advantage-a-quick-look-with-pandas">Do Home Teams Really Have an Advantage? A Quick Look with Pandas</a>
+  <ul class="collapse">
+  <li><a href="#introduction-is-the-home-advantage-real" id="toc-introduction-is-the-home-advantage-real" class="nav-link" data-scroll-target="#introduction-is-the-home-advantage-real">Introduction: Is the “Home Advantage” Real?</a></li>
+  <li><a href="#dataset-overview" id="toc-dataset-overview" class="nav-link" data-scroll-target="#dataset-overview">Dataset Overview</a></li>
+  <li><a href="#step-by-step-with-pandas" id="toc-step-by-step-with-pandas" class="nav-link" data-scroll-target="#step-by-step-with-pandas">Step-by-Step with Pandas</a></li>
+  <li><a href="#results-in-table-format" id="toc-results-in-table-format" class="nav-link" data-scroll-target="#results-in-table-format">Results in Table Format</a></li>
+  <li><a href="#visualizing-the-home-advantage" id="toc-visualizing-the-home-advantage" class="nav-link" data-scroll-target="#visualizing-the-home-advantage">Visualizing the Home Advantage</a></li>
+  <li><a href="#a-bit-of-math-interpreting-win-rate" id="toc-a-bit-of-math-interpreting-win-rate" class="nav-link" data-scroll-target="#a-bit-of-math-interpreting-win-rate">A Bit of Math: Interpreting Win Rate</a></li>
+  <li><a href="#conclusion-the-advantage-is-real-sometimes" id="toc-conclusion-the-advantage-is-real-sometimes" class="nav-link" data-scroll-target="#conclusion-the-advantage-is-real-sometimes">Conclusion: The Advantage Is Real (Sometimes)</a></li>
+  <li><a href="#call-to-action-dig-deeper" id="toc-call-to-action-dig-deeper" class="nav-link" data-scroll-target="#call-to-action-dig-deeper">Call to Action: Dig Deeper!</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -217,12 +227,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="fixme" class="level1">
-<h1>fixme</h1>
+<section id="do-home-teams-really-have-an-advantage-a-quick-look-with-pandas" class="level1">
+<h1>Do Home Teams Really Have an Advantage? A Quick Look with Pandas</h1>
+<section id="introduction-is-the-home-advantage-real" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-is-the-home-advantage-real">Introduction: Is the “Home Advantage” Real?</h2>
+</section>
+<section id="dataset-overview" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-overview">Dataset Overview</h2>
+</section>
+<section id="step-by-step-with-pandas" class="level2">
+<h2 class="anchored" data-anchor-id="step-by-step-with-pandas">Step-by-Step with Pandas</h2>
+</section>
+<section id="results-in-table-format" class="level2">
+<h2 class="anchored" data-anchor-id="results-in-table-format">Results in Table Format</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Sport</th>
+<th>Home Win % (2024)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NFL</td>
+<td>0.533</td>
+</tr>
+<tr class="even">
+<td>NBA</td>
+<td>0.543</td>
+</tr>
+<tr class="odd">
+<td>MLB</td>
+<td>0.521</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="visualizing-the-home-advantage" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-the-home-advantage">Visualizing the Home Advantage</h2>
+<pre><code>import matplotlib.pyplot as plt
+
+plt.figure(figsize=(6, 4))
+plt.plot(sports, win_rates, marker='o', linestyle='-', color='blue')
+plt.title('Home Win Percentage by Sport (2024 Season)')
+plt.xlabel('Sport')
+plt.ylabel('Home Win Percentage')
+plt.ylim(0.50, 0.56)
+plt.grid(True)
+plt.tight_layout()
+
+plt.savefig("home_win_2024_lineplot.png")
+plt.show()
+![Home Win Percentage by Sport (2024 Season)](home_win_2024_lineplot.png)
+</code></pre>
+</section>
+<section id="a-bit-of-math-interpreting-win-rate" class="level2">
+<h2 class="anchored" data-anchor-id="a-bit-of-math-interpreting-win-rate">A Bit of Math: Interpreting Win Rate</h2>
+</section>
+<section id="conclusion-the-advantage-is-real-sometimes" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-the-advantage-is-real-sometimes">Conclusion: The Advantage Is Real (Sometimes)</h2>
+</section>
+<section id="call-to-action-dig-deeper" class="level2">
+<h2 class="anchored" data-anchor-id="call-to-action-dig-deeper">Call to Action: Dig Deeper!</h2>
 
 
 <!-- -->
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -677,16 +748,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Does The Home Sports Team Have the Advantage?"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    html:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">        code-fold: true</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">        toc: true</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu"># fixme</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Does The Home Sports Team Have the Advantage?"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">    html:</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">        code-fold: true</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">        toc: true</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu"># Do Home Teams Really Have an Advantage? A Quick Look with Pandas</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction: Is the "Home Advantage" Real?</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dataset Overview</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Step-by-Step with Pandas</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Results in Table Format</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sport <span class="pp">|</span> Home Win % (2024) <span class="pp">|</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------|--------------------|</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> NFL   <span class="pp">|</span> 0.533              <span class="pp">|</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> NBA   <span class="pp">|</span> 0.543              <span class="pp">|</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> MLB   <span class="pp">|</span> 0.521              <span class="pp">|</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualizing the Home Advantage</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="in">import matplotlib.pyplot as plt</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="in">plt.figure(figsize=(6, 4))</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="in">plt.plot(sports, win_rates, marker='o', linestyle='-', color='blue')</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="in">plt.title('Home Win Percentage by Sport (2024 Season)')</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="in">plt.xlabel('Sport')</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="in">plt.ylabel('Home Win Percentage')</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="in">plt.ylim(0.50, 0.56)</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="in">plt.grid(True)</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="in">plt.tight_layout()</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="in">plt.savefig("home_win_2024_lineplot.png")</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="in">plt.show()</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="in">![Home Win Percentage by Sport (2024 Season)](home_win_2024_lineplot.png)</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## A Bit of Math: Interpreting Win Rate</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion: The Advantage Is Real (Sometimes)</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Call to Action: Dig Deeper!</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

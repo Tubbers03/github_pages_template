@@ -6,10 +6,10 @@ format:
         toc: true
 jupyter: python3
 ---
-
-# Do Home Teams Really Have an Advantage? A Quick Look with Pandas
+# Is Home Field Advantage really an advantage?
 
 ## Introduction: Is the "Home Advantage" Real?
+I wanted to see through
 
 ## Dataset Overview
 
@@ -22,9 +22,9 @@ jupyter: python3
 | NBA   | 0.543              |
 | MLB   | 0.521              |
 ## Visualizing the Home Advantage
+```{python}
 sports = ['NFL', 'NBA', 'MLB']
 win_rates = [0.533, 0.543, 0.521]
-```
 import matplotlib.pyplot as plt
 
 plt.figure(figsize=(6, 4))
@@ -36,7 +36,9 @@ plt.ylim(0.50, 0.56)
 plt.grid(True)
 plt.tight_layout()
 
-plt.savefig("home_win_2024_lineplot.png")  # Or use plt.show() to display it
+plt.savefig("home_win_2024_lineplot.png")
+plt.show()
+![Home Win Percentage by Sport (2024 Season)](home_win_2024_lineplot.png)
 
 ```
 ## A Bit of Math: Interpreting Win Rate
