@@ -7,7 +7,7 @@ format:
 jupyter: python3
 ---
 # Is Home Field Advantage really an advantage?
-![Fans cheering in a home stadium, showing the energy of home advantage](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gettyimages.com%2Fphotos%2Fcheering-sports-fans%3Fpage%3D2&psig=AOvVaw3xFREX9BTYxBBdKAd7k5CE&ust=1759294964306000&source=images&cd=vfe&opi=89978449&ved=0CBYQjRxqFwoTCMC3_M_a_48DFQAAAAAdAAAAABAE`)
+![Fans cheering in a home stadium, showing the energy of home advantage](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gettyimages.com%2Fphotos%2Fcheering-sports-fans%3Fpage%3D2&psig=AOvVaw3xFREX9BTYxBBdKAd7k5CE&ust=1759294964306000&source=images&cd=vfe&opi=89978449&ved=0CBYQjRxqFwoTCMC3_M_a_48DFQAAAAAdAAAAABAE)
 *Figure 1: Fans cheering at a home game, illustrating the boost of home field advantage.*
 
 
