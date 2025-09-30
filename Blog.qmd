@@ -8,6 +8,7 @@ jupyter: python3
 ---
 # Is Home Field Advantage really an advantage?
 ![Fans cheering in a home stadium, showing the energy of home advantage](https://www.shutterstock.com/image-photo/sport-fans-cheering-game-on-600nw-2452926777.jpg)
+
 *Fans cheering at a home game, illustrating the boost of home field advantage.*
 
 
@@ -20,6 +21,10 @@ Growing up, I always heard that the home team had a major chance of winning the 
 - **The home team gets to sleep in their own beds and city**
 
 So, I wanted to see if home field actually made a *difference* in the win column.
+
+## Step-by-Step: Finding and Using Data Like a Data Scientist
+Before we can draw any conclusions from the data, we first need to find it, understand it, and prepare it for analysis. This section walks through the exact process I followed — from identifying the question I wanted to answer, to gathering the raw data, and finally preparing it into a format suitable for analysis.
+Whether you're a sports fan curious about analytics or someone learning data science, this step-by-step guide shows how to go from a question in your head to insights in your notebook.
 
 ## Dataset Overview
 To begin becoming someone who uses data, you first need to obtain your data. You want data that is useful to find the answer to your question. I went to statmuse and got the standings data from the NFL, NBA, and MLB. I then put the data into data frames.
@@ -166,7 +171,8 @@ print(mlb_df.head())
 
 ```
 
-
+## Step by Step of Finding and Using Data
+Once I found reliable data sources with the relevant standings and home/road records, I gathered the data and loaded it into DataFrames. The key was identifying the columns that showed home wins and total games so I could manually calculate the overall home win percentages for each league before moving on to visualization.
 
 ## Results in Table Format
 

@@ -196,6 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#introduction-is-the-home-advantage-real" id="toc-introduction-is-the-home-advantage-real" class="nav-link" data-scroll-target="#introduction-is-the-home-advantage-real">Introduction: Is the “Home Advantage” Real?</a></li>
   <li><a href="#dataset-overview" id="toc-dataset-overview" class="nav-link" data-scroll-target="#dataset-overview">Dataset Overview</a></li>
   <li><a href="#results-in-table-format" id="toc-results-in-table-format" class="nav-link" data-scroll-target="#results-in-table-format">Results in Table Format</a></li>
+  <li><a href="#visualizing-the-home-advantage" id="toc-visualizing-the-home-advantage" class="nav-link" data-scroll-target="#visualizing-the-home-advantage">Visualizing the Home Advantage</a></li>
   <li><a href="#a-bit-of-math-interpreting-win-rate" id="toc-a-bit-of-math-interpreting-win-rate" class="nav-link" data-scroll-target="#a-bit-of-math-interpreting-win-rate">A Bit of Math: Interpreting Win Rate</a></li>
   <li><a href="#conclusion-the-advantage-is-real-sometimes" id="toc-conclusion-the-advantage-is-real-sometimes" class="nav-link" data-scroll-target="#conclusion-the-advantage-is-real-sometimes">Conclusion: The Advantage Is Real (Sometimes)</a></li>
   <li><a href="#call-to-action-dig-deeper" id="toc-call-to-action-dig-deeper" class="nav-link" data-scroll-target="#call-to-action-dig-deeper">Call to Action: Dig Deeper!</a></li>
@@ -227,14 +228,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="is-home-field-advantage-really-an-advantage" class="level1">
 <h1>Is Home Field Advantage really an advantage?</h1>
-<p><img src="https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fwww.gettyimages.com%2Fphotos%2Fcheering-sports-fans%3Fpage%3D2&amp;psig=AOvVaw3xFREX9BTYxBBdKAd7k5CE&amp;ust=1759294964306000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBYQjRxqFwoTCMC3_M_a_48DFQAAAAAdAAAAABAE" class="img-fluid" alt="Fans cheering in a home stadium, showing the energy of home advantage"> <em>Fans cheering at a home game, illustrating the boost of home field advantage.</em></p>
+<p><img src="https://www.shutterstock.com/image-photo/sport-fans-cheering-game-on-600nw-2452926777.jpg" class="img-fluid" alt="Fans cheering in a home stadium, showing the energy of home advantage"> <em>Fans cheering at a home game, illustrating the boost of home field advantage.</em></p>
 <section id="introduction-is-the-home-advantage-real" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-is-the-home-advantage-real">Introduction: Is the “Home Advantage” Real?</h2>
 <p>Growing up, I always heard that the home team had a major chance of winning the game because of plenty of factors:</p>
 <ul>
-<li><strong>Fans to cheer them on</strong></li>
-<li><strong>It’s the facility they practice in</strong></li>
-<li><strong>The team gets to sleep in their own beds and city</strong></li>
+<li><strong>They have more fans to cheer them on</strong></li>
+<li><strong>It’s the facility they practice in during the offseason</strong></li>
+<li><strong>The home team gets to sleep in their own beds and city</strong></li>
 </ul>
 <p>So, I wanted to see if home field actually made a <em>difference</em> in the win column.</p>
 </section>
@@ -242,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="dataset-overview">Dataset Overview</h2>
 <p>To begin becoming someone who uses data, you first need to obtain your data. You want data that is useful to find the answer to your question. I went to statmuse and got the standings data from the NFL, NBA, and MLB. I then put the data into data frames.</p>
 <p>The NFL standings data was sourced from StatMuse: - <a href="https://www.statmuse.com/ask?query=2024+nfl+standings&amp;preferred_domain=&amp;direct=true&amp;l=&amp;t=1759206685574">2024 NFL Standings - StatMuse</a> The NBA standings data was sourced from StatMuse: - <a href="https://www.statmuse.com/nba/ask/nba-2024-standings">2024 NBA Standings - StatMuse</a> The MLB standings data was sourced from StatMuse: - <a href="https://www.statmuse.com/mlb/ask/mlb-standings-for-2024">2024 MLB Standings - StatMuse</a></p>
-<div id="14bd626d" class="cell" data-execution_count="2">
+<div id="6ce5c83b" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"NFL Standings (head):"</span>)</span>
@@ -305,8 +306,11 @@ MLB Standings (head):
 </tr>
 </tbody>
 </table>
-<p>As you can see, NBA had the highest home win rate at around <strong>54.5%</strong>, with the NFL close behind at around <strong>53%</strong>, and the MLB coming in at around <strong>52%</strong>. ## Visualizing the Home Advantage</p>
-<div id="ffb7d1a7" class="cell" data-execution_count="3">
+<p>As you can see, NBA had the highest home win rate at around <strong>54.5%</strong>, with the NFL close behind at around <strong>53%</strong>, and the MLB coming in at around <strong>52%</strong>.</p>
+</section>
+<section id="visualizing-the-home-advantage" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-the-home-advantage">Visualizing the Home Advantage</h2>
+<div id="9cd4c9c0" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sports <span class="op">=</span> [<span class="st">'NFL'</span>, <span class="st">'NBA'</span>, <span class="st">'MLB'</span>]</span>
@@ -340,12 +344,13 @@ MLB Standings (head):
 </section>
 <section id="a-bit-of-math-interpreting-win-rate" class="level2">
 <h2 class="anchored" data-anchor-id="a-bit-of-math-interpreting-win-rate">A Bit of Math: Interpreting Win Rate</h2>
-<p>So, to get the win rate I added all the wins from each team at home, and then I divided the total wins by the total number of games. Mathematically, it looks something like this: Home&nbsp;Win&nbsp;Rate = Total&nbsp;Home&nbsp;Wins Total&nbsp;Home&nbsp;Games Home&nbsp;Win&nbsp;Rate= Total&nbsp;Home&nbsp;Games Total&nbsp;Home&nbsp;Wins ​<br>
-This gives us the percentage of games that were won by the home team. It’s a straightforward approach, but it gives us valuable insight into whether playing at home really provides a competitive edge. While a few percentage points may not seem like much, over the course of hundreds or even thousands of games, those margins can matter — especially in playoff races and tight seasons.</p>
+<p>So, to get the win rate I added all the wins from each team at home, and then I divided the total wins by the total number of games. Mathematically, it looks something like this:</p>
+<p><strong>Home&nbsp;Win&nbsp;Rate = Total&nbsp;Home&nbsp;Wins / Total&nbsp;Games</strong></p>
+<p>​This gives us the percentage of games that were won by the home team. It’s a straightforward approach, but it gives us valuable insight into whether playing at home really provides a competitive edge. While a few percentage points may not seem like much, over the course of hundreds or even thousands of games, those margins can matter — especially in playoff races and tight seasons.</p>
 </section>
 <section id="conclusion-the-advantage-is-real-sometimes" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion-the-advantage-is-real-sometimes">Conclusion: The Advantage Is Real (Sometimes)</h2>
-<p>Looking at the data, it’s clear that home teams do tend to win slightly more often across all three major leagues. However, <strong>this advantage isn’t absolute</strong>. It depends heavily on the team. Some teams had losing records overall but were surprisingly strong at home. Others were consistent regardless of location. And, some strong teams rarely lost at home. This suggests that while playing at home may help, it’s not a guarantee of success — the strength of the team still matters more.</p>
+<p>Looking at the data, it’s clear that home teams do tend to win slightly more often across all three major leagues. However, <strong>this advantage isn’t absolute</strong>. While we did find that playing at home has a higher than 50% win rate, that doesn’t go into all the factors that go into sports. It depends heavily on the team. Some teams had losing records overall but were surprisingly strong at home. Others were consistent regardless of location. And, some strong teams rarely lost at home. This suggests that while playing at home may help, it’s not a guarantee of success — the strength of the team still matters more.</p>
 </section>
 <section id="call-to-action-dig-deeper" class="level2">
 <h2 class="anchored" data-anchor-id="call-to-action-dig-deeper">Call to Action: Dig Deeper!</h2>
@@ -824,7 +829,7 @@ This gives us the percentage of games that were won by the home team. It’s a s
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Is Home Field Advantage really an advantage?</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="al">![Fans cheering in a home stadium, showing the energy of home advantage](https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fwww.gettyimages.com%2Fphotos%2Fcheering-sports-fans%3Fpage%3D2&amp;psig=AOvVaw3xFREX9BTYxBBdKAd7k5CE&amp;ust=1759294964306000&amp;source=images&amp;cd=vfe&amp;opi=89978449&amp;ved=0CBYQjRxqFwoTCMC3_M_a_48DFQAAAAAdAAAAABAE)</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="al">![Fans cheering in a home stadium, showing the energy of home advantage](https://www.shutterstock.com/image-photo/sport-fans-cheering-game-on-600nw-2452926777.jpg)</span></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>*Fans cheering at a home game, illustrating the boost of home field advantage.*</span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
@@ -832,9 +837,9 @@ This gives us the percentage of games that were won by the home team. It’s a s
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction: Is the "Home Advantage" Real?</span></span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>Growing up, I always heard that the home team had a major chance of winning the game because of plenty of factors: </span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Fans to cheer them on** </span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**It's the facility they practice in**</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**The team gets to sleep in their own beds and city**</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**They have more fans to cheer them on** </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**It's the facility they practice in during the offseason**</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**The home team gets to sleep in their own beds and city**</span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>So, I wanted to see if home field actually made a *difference* in the win column.</span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
@@ -993,50 +998,46 @@ This gives us the percentage of games that were won by the home team. It’s a s
 <span id="cb5-180"><a href="#cb5-180" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> MLB   <span class="pp">|</span> 0.521              <span class="pp">|</span></span>
 <span id="cb5-181"><a href="#cb5-181" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-182"><a href="#cb5-182" aria-hidden="true" tabindex="-1"></a>As you can see, NBA had the highest home win rate at around **54.5%**, with the NFL close behind at around **53%**, and the MLB coming in at around **52%**.</span>
-<span id="cb5-183"><a href="#cb5-183" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualizing the Home Advantage</span></span>
-<span id="cb5-186"><a href="#cb5-186" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a>sports <span class="op">=</span> [<span class="st">'NFL'</span>, <span class="st">'NBA'</span>, <span class="st">'MLB'</span>]</span>
-<span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a>win_rates <span class="op">=</span> [<span class="fl">0.533</span>, <span class="fl">0.543</span>, <span class="fl">0.521</span>]</span>
-<span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-191"><a href="#cb5-191" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
-<span id="cb5-192"><a href="#cb5-192" aria-hidden="true" tabindex="-1"></a>plt.plot(sports, win_rates, marker<span class="op">=</span><span class="st">'o'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
-<span id="cb5-193"><a href="#cb5-193" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Home Win Percentage by Sport (2024 Season)'</span>)</span>
-<span id="cb5-194"><a href="#cb5-194" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Sport'</span>)</span>
-<span id="cb5-195"><a href="#cb5-195" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Home Win Percentage'</span>)</span>
-<span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="fl">0.50</span>, <span class="fl">0.56</span>)</span>
-<span id="cb5-197"><a href="#cb5-197" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb5-198"><a href="#cb5-198" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb5-199"><a href="#cb5-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"home_win_2024_lineplot.png"</span>)</span>
-<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>[Home Win Percentage by Sport (<span class="dv">2024</span> Season)](home_win_2024_lineplot.png)</span>
-<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-206"><a href="#cb5-206" aria-hidden="true" tabindex="-1"></a><span class="fu">## A Bit of Math: Interpreting Win Rate</span></span>
-<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a>So, to get the win rate I added all the wins from each team at home, and then I divided the total wins by the total number of games. Mathematically, it looks something like this:</span>
-<span id="cb5-208"><a href="#cb5-208" aria-hidden="true" tabindex="-1"></a>Home&nbsp;Win&nbsp;Rate</span>
-<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a>=</span>
-<span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a>Total&nbsp;Home&nbsp;Wins</span>
-<span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a>Total&nbsp;Home&nbsp;Games</span>
-<span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a>Home&nbsp;Win&nbsp;Rate= </span>
-<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a>Total&nbsp;Home&nbsp;Games</span>
-<span id="cb5-214"><a href="#cb5-214" aria-hidden="true" tabindex="-1"></a>Total&nbsp;Home&nbsp;Wins</span>
-<span id="cb5-215"><a href="#cb5-215" aria-hidden="true" tabindex="-1"></a>​   </span>
-<span id="cb5-216"><a href="#cb5-216" aria-hidden="true" tabindex="-1"></a> This gives us the percentage of games that were won by the home team. It's a straightforward approach, but it gives us valuable insight into whether playing at home really provides a competitive edge. While a few percentage points may not seem like much, over the course of hundreds or even thousands of games, those margins can matter — especially in playoff races and tight seasons.</span>
-<span id="cb5-217"><a href="#cb5-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-218"><a href="#cb5-218" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion: The Advantage Is Real (Sometimes)</span></span>
-<span id="cb5-219"><a href="#cb5-219" aria-hidden="true" tabindex="-1"></a>Looking at the data, it's clear that home teams do tend to win slightly more often across all three major leagues. However, **this advantage isn't absolute**. It depends heavily on the team. Some teams had losing records overall but were surprisingly strong at home. Others were consistent regardless of location. And, some strong teams rarely lost at home. This suggests that while playing at home may help, it’s not a guarantee of success — the strength of the team still matters more.</span>
-<span id="cb5-220"><a href="#cb5-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-221"><a href="#cb5-221" aria-hidden="true" tabindex="-1"></a><span class="fu">## Call to Action: Dig Deeper!</span></span>
-<span id="cb5-222"><a href="#cb5-222" aria-hidden="true" tabindex="-1"></a>If you're curious about how much home or away performance contributes to a team's success, the full data is right here in the project. Dive into the dataframes and ask your own questions:</span>
+<span id="cb5-183"><a href="#cb5-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-184"><a href="#cb5-184" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualizing the Home Advantage</span></span>
+<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a>sports <span class="op">=</span> [<span class="st">'NFL'</span>, <span class="st">'NBA'</span>, <span class="st">'MLB'</span>]</span>
+<span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a>win_rates <span class="op">=</span> [<span class="fl">0.533</span>, <span class="fl">0.543</span>, <span class="fl">0.521</span>]</span>
+<span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-191"><a href="#cb5-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-192"><a href="#cb5-192" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb5-193"><a href="#cb5-193" aria-hidden="true" tabindex="-1"></a>plt.plot(sports, win_rates, marker<span class="op">=</span><span class="st">'o'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb5-194"><a href="#cb5-194" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Home Win Percentage by Sport (2024 Season)'</span>)</span>
+<span id="cb5-195"><a href="#cb5-195" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Sport'</span>)</span>
+<span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Home Win Percentage'</span>)</span>
+<span id="cb5-197"><a href="#cb5-197" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="fl">0.50</span>, <span class="fl">0.56</span>)</span>
+<span id="cb5-198"><a href="#cb5-198" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb5-199"><a href="#cb5-199" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"home_win_2024_lineplot.png"</span>)</span>
+<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>[Home Win Percentage by Sport (<span class="dv">2024</span> Season)](home_win_2024_lineplot.png)</span>
+<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-206"><a href="#cb5-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a><span class="fu">## A Bit of Math: Interpreting Win Rate</span></span>
+<span id="cb5-208"><a href="#cb5-208" aria-hidden="true" tabindex="-1"></a>So, to get the win rate I added all the wins from each team at home, and then I divided the total wins by the total number of games. Mathematically, it looks something like this:</span>
+<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a>**Home&nbsp;Win&nbsp;Rate = Total&nbsp;Home&nbsp;Wins / Total&nbsp;Games**</span>
+<span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a>​This gives us the percentage of games that were won by the home team. It's a straightforward approach, but it gives us valuable insight into whether playing at home really provides a competitive edge. While a few percentage points may not seem like much, over the course of hundreds or even thousands of games, those margins can matter — especially in playoff races and tight seasons.</span>
+<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-214"><a href="#cb5-214" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion: The Advantage Is Real (Sometimes)</span></span>
+<span id="cb5-215"><a href="#cb5-215" aria-hidden="true" tabindex="-1"></a>Looking at the data, it's clear that home teams do tend to win slightly more often across all three major leagues. However, **this advantage isn't absolute**. While we did find that playing at home has a higher than 50% win rate, that doesn't go into all the factors that go into sports. It depends heavily on the team. Some teams had losing records overall but were surprisingly strong at home. Others were consistent regardless of location. And, some strong teams rarely lost at home. This suggests that while playing at home may help, it’s not a guarantee of success — the strength of the team still matters more.</span>
+<span id="cb5-216"><a href="#cb5-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-217"><a href="#cb5-217" aria-hidden="true" tabindex="-1"></a><span class="fu">## Call to Action: Dig Deeper!</span></span>
+<span id="cb5-218"><a href="#cb5-218" aria-hidden="true" tabindex="-1"></a>If you're curious about how much home or away performance contributes to a team's success, the full data is right here in the project. Dive into the dataframes and ask your own questions:</span>
+<span id="cb5-219"><a href="#cb5-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-220"><a href="#cb5-220" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Which team had the biggest difference between home and road records?</span>
+<span id="cb5-221"><a href="#cb5-221" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Are bad teams just worse on the road, or bad everywhere?</span>
+<span id="cb5-222"><a href="#cb5-222" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Which divisions or conferences have the strongest home field trends?</span>
 <span id="cb5-223"><a href="#cb5-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-224"><a href="#cb5-224" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Which team had the biggest difference between home and road records?</span>
-<span id="cb5-225"><a href="#cb5-225" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Are bad teams just worse on the road, or bad everywhere?</span>
-<span id="cb5-226"><a href="#cb5-226" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Which divisions or conferences have the strongest home field trends?</span>
-<span id="cb5-227"><a href="#cb5-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-228"><a href="#cb5-228" aria-hidden="true" tabindex="-1"></a>Use the tools of data science — slicing, filtering, visualizing and start exploring!</span>
+<span id="cb5-224"><a href="#cb5-224" aria-hidden="true" tabindex="-1"></a>Use the tools of data science — slicing, filtering, visualizing and start exploring!</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
