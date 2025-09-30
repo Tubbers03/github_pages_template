@@ -7,7 +7,7 @@ format:
 jupyter: python3
 ---
 # Is Home Field Advantage really an advantage?
-![Fans cheering in a home stadium, showing the energy of home advantage](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gettyimages.com%2Fphotos%2Fcheering-sports-fans%3Fpage%3D2&psig=AOvVaw3xFREX9BTYxBBdKAd7k5CE&ust=1759294964306000&source=images&cd=vfe&opi=89978449&ved=0CBYQjRxqFwoTCMC3_M_a_48DFQAAAAAdAAAAABAE)
+![Fans cheering in a home stadium, showing the energy of home advantage](https://www.shutterstock.com/image-photo/sport-fans-cheering-game-on-600nw-2452926777.jpg)
 *Fans cheering at a home game, illustrating the boost of home field advantage.*
 
 
@@ -15,9 +15,9 @@ jupyter: python3
 ## Introduction: Is the "Home Advantage" Real?
 Growing up, I always heard that the home team had a major chance of winning the game because of plenty of factors: 
 
-- **Fans to cheer them on** 
-- **It's the facility they practice in**
-- **The team gets to sleep in their own beds and city**
+- **They have more fans to cheer them on** 
+- **It's the facility they practice in during the offseason**
+- **The home team gets to sleep in their own beds and city**
 
 So, I wanted to see if home field actually made a *difference* in the win column.
 
@@ -177,6 +177,7 @@ print(mlb_df.head())
 | MLB   | 0.521              |
 
 As you can see, NBA had the highest home win rate at around **54.5%**, with the NFL close behind at around **53%**, and the MLB coming in at around **52%**.
+
 ## Visualizing the Home Advantage
 ```{python}
 sports = ['NFL', 'NBA', 'MLB']
@@ -200,18 +201,13 @@ plt.show()
 
 ## A Bit of Math: Interpreting Win Rate
 So, to get the win rate I added all the wins from each team at home, and then I divided the total wins by the total number of games. Mathematically, it looks something like this:
-Home Win Rate
-=
-Total Home Wins
-Total Home Games
-Home Win Rate= 
-Total Home Games
-Total Home Wins
-​	
- This gives us the percentage of games that were won by the home team. It's a straightforward approach, but it gives us valuable insight into whether playing at home really provides a competitive edge. While a few percentage points may not seem like much, over the course of hundreds or even thousands of games, those margins can matter — especially in playoff races and tight seasons.
+
+**Home Win Rate = Total Home Wins / Total Games**
+
+​This gives us the percentage of games that were won by the home team. It's a straightforward approach, but it gives us valuable insight into whether playing at home really provides a competitive edge. While a few percentage points may not seem like much, over the course of hundreds or even thousands of games, those margins can matter — especially in playoff races and tight seasons.
 
 ## Conclusion: The Advantage Is Real (Sometimes)
-Looking at the data, it's clear that home teams do tend to win slightly more often across all three major leagues. However, **this advantage isn't absolute**. It depends heavily on the team. Some teams had losing records overall but were surprisingly strong at home. Others were consistent regardless of location. And, some strong teams rarely lost at home. This suggests that while playing at home may help, it’s not a guarantee of success — the strength of the team still matters more.
+Looking at the data, it's clear that home teams do tend to win slightly more often across all three major leagues. However, **this advantage isn't absolute**. While we did find that playing at home has a higher than 50% win rate, that doesn't go into all the factors that go into sports. It depends heavily on the team. Some teams had losing records overall but were surprisingly strong at home. Others were consistent regardless of location. And, some strong teams rarely lost at home. This suggests that while playing at home may help, it’s not a guarantee of success — the strength of the team still matters more.
 
 ## Call to Action: Dig Deeper!
 If you're curious about how much home or away performance contributes to a team's success, the full data is right here in the project. Dive into the dataframes and ask your own questions:
