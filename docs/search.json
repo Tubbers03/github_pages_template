@@ -124,7 +124,7 @@
     "href": "Blog.html",
     "title": "Does The Home Sports Team Have the Advantage?",
     "section": "",
-    "text": "Sport\nHome Win % (2024)\n\n\n\n\nNFL\n0.533\n\n\nNBA\n0.543\n\n\nMLB\n0.521\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\n\nplt.figure(figsize=(6, 4))\nplt.plot(sports, win_rates, marker='o', linestyle='-', color='blue')\nplt.title('Home Win Percentage by Sport (2024 Season)')\nplt.xlabel('Sport')\nplt.ylabel('Home Win Percentage')\nplt.ylim(0.50, 0.56)\nplt.grid(True)\nplt.tight_layout()\n\nplt.savefig(\"home_win_2024_lineplot.png\")\nplt.show()\n![Home Win Percentage by Sport (2024 Season)](home_win_2024_lineplot.png)"
+    "text": "Growing up, I always heard that the home team had a major chance of winning the game because of plenty of factors: 1. Fans to cheer them on, 2. It’s the facility they practice in, and 3. The team gets to sleep in their own beds\n\n\n\n\n\n\n\n\n\n\n\n\nSport\nHome Win % (2024)\n\n\n\n\nNFL\n0.533\n\n\nNBA\n0.543\n\n\nMLB\n0.521\n\n\n\n\n\n\n\n\nCode\nsports = ['NFL', 'NBA', 'MLB']\nwin_rates = [0.533, 0.543, 0.521]\nimport matplotlib.pyplot as plt\n\nplt.figure(figsize=(6, 4))\nplt.plot(sports, win_rates, marker='o', linestyle='-', color='blue')\nplt.title('Home Win Percentage by Sport (2024 Season)')\nplt.xlabel('Sport')\nplt.ylabel('Home Win Percentage')\nplt.ylim(0.50, 0.56)\nplt.grid(True)\nplt.tight_layout()\n\nplt.savefig(\"home_win_2024_lineplot.png\")\nplt.show()\n![Home Win Percentage by Sport (2024 Season)](home_win_2024_lineplot.png)\n\n\n\n\n\n\n\n\n\nzsh:1: bad pattern: [Home"
   },
   {
     "objectID": "Blog.html#results-in-table-format",
@@ -138,6 +138,13 @@
     "href": "Blog.html#visualizing-the-home-advantage",
     "title": "Does The Home Sports Team Have the Advantage?",
     "section": "",
-    "text": "import matplotlib.pyplot as plt\n\nplt.figure(figsize=(6, 4))\nplt.plot(sports, win_rates, marker='o', linestyle='-', color='blue')\nplt.title('Home Win Percentage by Sport (2024 Season)')\nplt.xlabel('Sport')\nplt.ylabel('Home Win Percentage')\nplt.ylim(0.50, 0.56)\nplt.grid(True)\nplt.tight_layout()\n\nplt.savefig(\"home_win_2024_lineplot.png\")\nplt.show()\n![Home Win Percentage by Sport (2024 Season)](home_win_2024_lineplot.png)"
+    "text": "Code\nsports = ['NFL', 'NBA', 'MLB']\nwin_rates = [0.533, 0.543, 0.521]\nimport matplotlib.pyplot as plt\n\nplt.figure(figsize=(6, 4))\nplt.plot(sports, win_rates, marker='o', linestyle='-', color='blue')\nplt.title('Home Win Percentage by Sport (2024 Season)')\nplt.xlabel('Sport')\nplt.ylabel('Home Win Percentage')\nplt.ylim(0.50, 0.56)\nplt.grid(True)\nplt.tight_layout()\n\nplt.savefig(\"home_win_2024_lineplot.png\")\nplt.show()\n![Home Win Percentage by Sport (2024 Season)](home_win_2024_lineplot.png)\n\n\n\n\n\n\n\n\n\nzsh:1: bad pattern: [Home"
+  },
+  {
+    "objectID": "Blog.html#introduction-is-the-home-advantage-real",
+    "href": "Blog.html#introduction-is-the-home-advantage-real",
+    "title": "Does The Home Sports Team Have the Advantage?",
+    "section": "",
+    "text": "Growing up, I always heard that the home team had a major chance of winning the game because of plenty of factors: 1. Fans to cheer them on, 2. It’s the facility they practice in, and 3. The team gets to sleep in their own beds"
   }
 ]

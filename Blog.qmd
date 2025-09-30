@@ -9,11 +9,157 @@ jupyter: python3
 # Is Home Field Advantage really an advantage?
 
 ## Introduction: Is the "Home Advantage" Real?
-I wanted to see through
+Growing up, I always heard that the home team had a major chance of winning the game because of plenty of factors: 
+- **Fans to cheer them on** 
+- **It's the facility they practice in**
+- **The team gets to sleep in their own beds and city**
+So, I wanted to see if home field actually made a *difference* in the win column.
 
 ## Dataset Overview
+```{python}
+#| echo: false
+#| output: false
 
-## Step-by-Step with Pandas
+import pandas as pd
+from io import StringIO
+
+# NFL data (CSV format as string)
+nfl_data = """
+Division,Team,W,L,T,PCT,PF,PA,PD,HOME,ROAD
+AFC East,Bills,13,4,0,.765,525,368,157,8-0-0,5-4-0
+AFC East,Dolphins,8,9,0,.471,345,364,-19,5-3-0,3-6-0
+AFC East,Jets,5,12,0,.294,338,404,-66,3-5-0,2-7-0
+AFC East,Patriots,4,13,0,.235,289,417,-128,2-6-0,2-7-0
+AFC North,Ravens,12,5,0,.706,518,361,157,6-2-0,6-3-0
+AFC North,Steelers,10,7,0,.588,380,347,33,5-3-0,5-4-0
+AFC North,Bengals,9,8,0,.529,472,434,38,3-5-0,6-3-0
+AFC North,Browns,3,14,0,.176,258,435,-177,2-6-0,1-8-0
+AFC South,Texans,10,7,0,.588,372,372,0,5-3-0,5-4-0
+AFC South,Colts,8,9,0,.471,377,427,-50,5-3-0,3-6-0
+AFC South,Jaguars,4,13,0,.235,320,435,-115,3-5-0,1-8-0
+AFC South,Titans,3,14,0,.176,311,460,-149,1-7-0,2-7-0
+AFC West,Chiefs,15,2,0,.882,385,326,59,8-0-0,7-2-0
+AFC West,Chargers,11,6,0,.647,402,301,101,5-3-0,6-3-0
+AFC West,Broncos,10,7,0,.588,425,311,114,6-2-0,4-5-0
+AFC West,Raiders,4,13,0,.235,309,434,-125,2-6-0,2-7-0
+NFC East,Eagles,14,3,0,.824,463,303,160,8-1-0,6-2-0
+NFC East,Commanders,12,5,0,.706,485,391,94,7-2-0,5-3-0
+NFC East,Cowboys,7,10,0,.412,350,468,-118,2-7-0,5-3-0
+NFC East,Giants,3,14,0,.176,273,415,-142,1-8-0,2-6-0
+NFC North,Lions,15,2,0,.882,564,342,222,7-2-0,8-0-0
+NFC North,Vikings,14,3,0,.824,432,332,100,8-1-0,6-2-0
+NFC North,Packers,11,6,0,.647,460,338,122,6-3-0,5-3-0
+NFC North,Bears,5,12,0,.294,310,370,-60,4-5-0,1-7-0
+NFC South,Buccaneers,10,7,0,.588,502,385,117,5-4-0,5-3-0
+NFC South,Falcons,8,9,0,.471,389,423,-34,4-5-0,4-4-0
+NFC South,Panthers,5,12,0,.294,341,534,-193,3-6-0,2-6-0
+NFC South,Saints,5,12,0,.294,338,398,-60,3-6-0,2-6-0
+NFC West,Rams,10,7,0,.588,367,386,-19,5-4-0,5-3-0
+NFC West,Seahawks,10,7,0,.588,375,368,7,3-6-0,7-1-0
+NFC West,Cardinals,8,9,0,.471,400,379,21,6-3-0,2-6-0
+NFC West,49ers,6,11,0,.353,389,436,-47,4-5-0,2-6-0
+"""
+
+nfl_df = pd.read_csv(StringIO(nfl_data))
+
+# NBA data (CSV format as string)
+nba_data = """
+Conference,Team,W,L,PCT,CONF,DIV,HOME,ROAD,L10
+Eastern,Celtics,64,18,.780,41-11,15-2,37-4,27-14,7-3
+Eastern,Knicks,50,32,.610,35-17,12-5,27-14,23-18,6-4
+Eastern,Bucks,49,33,.598,34-18,10-7,31-11,18-22,3-7
+Eastern,Cavaliers,48,34,.585,31-21,11-5,26-15,22-19,4-6
+Eastern,Magic,47,35,.573,32-20,9-7,29-12,18-23,5-5
+Eastern,Pacers,47,35,.573,32-20,11-6,26-15,21-20,7-3
+Eastern,76ers,47,35,.573,31-21,8-8,25-16,22-19,8-2
+Eastern,Heat,46,36,.561,32-20,13-3,22-19,24-17,7-3
+Eastern,Bulls,39,43,.476,22-29,7-9,20-21,19-22,5-5
+Eastern,Hawks,36,46,.439,22-30,8-8,21-20,15-26,3-7
+Eastern,Nets,32,50,.390,24-28,5-11,20-21,12-29,5-5
+Eastern,Raptors,25,57,.305,18-34,1-15,14-27,11-30,2-8
+Eastern,Hornets,21,61,.256,14-38,6-10,11-30,10-31,3-7
+Eastern,Wizards,15,67,.183,11-41,4-12,7-34,8-33,1-9
+Eastern,Pistons,14,68,.171,10-41,2-14,7-33,7-35,2-8
+Western,Thunder,57,25,.695,36-16,12-4,33-8,24-17,7-3
+Western,Nuggets,57,25,.695,33-19,10-6,33-8,24-17,6-4
+Western,Timberwolves,56,26,.683,37-15,12-4,30-11,26-15,6-4
+Western,Clippers,51,31,.622,30-22,9-7,25-16,26-15,6-4
+Western,Mavericks,50,32,.610,31-21,11-5,25-16,25-16,7-3
+Western,Suns,49,33,.598,29-23,9-9,25-16,24-17,7-3
+Western,Lakers,47,35,.573,27-25,7-10,28-14,19-21,7-3
+Western,Pelicans,49,33,.598,30-22,9-7,21-19,28-14,5-5
+Western,Kings,46,36,.561,30-22,10-7,24-17,22-19,4-6
+Western,Warriors,46,36,.561,26-26,7-9,21-20,25-16,8-2
+Western,Rockets,41,41,.500,28-24,9-7,27-14,14-27,4-6
+Western,Jazz,31,51,.378,16-36,5-11,21-20,10-31,2-8
+Western,Grizzlies,27,55,.329,14-37,8-8,9-32,18-23,3-7
+Western,Spurs,22,60,.268,14-37,3-13,12-29,10-31,6-4
+Western,Trail Blazers,21,61,.256,8-44,1-15,11-30,10-31,2-8
+"""
+
+nba_df = pd.read_csv(StringIO(nba_data))
+
+# MLB data (CSV format as string)
+mlb_data = """
+League,Division,Team,W,L,PCT,GB,HOME,ROAD,L10
+AL,AL East,Yankees,94,68,.580,0.0,44-37,50-31,5-5
+AL,AL East,Orioles,91,71,.562,3.0,44-37,47-34,7-3
+AL,AL East,Red Sox,81,81,.500,13.0,38-43,43-38,5-5
+AL,AL East,Rays,80,82,.494,14.0,42-39,38-43,6-4
+AL,AL East,Blue Jays,74,88,.457,20.0,39-42,35-46,2-8
+AL,AL Central,Guardians,92,69,.571,0.0,50-30,42-39,5-5
+AL,AL Central,Royals,86,76,.531,6.5,45-36,41-40,4-6
+AL,AL Central,Tigers,86,76,.531,6.5,43-38,43-38,7-3
+AL,AL Central,Twins,82,80,.506,10.5,43-38,39-42,2-8
+AL,AL Central,White Sox,41,121,.253,51.5,23-58,18-63,5-5
+AL,AL West,Astros,88,73,.547,0.0,46-35,42-38,6-4
+AL,AL West,Mariners,85,77,.525,3.5,49-32,36-45,8-2
+AL,AL West,Rangers,78,84,.481,10.5,44-37,34-47,5-5
+AL,AL West,Athletics,69,93,.426,19.5,38-43,31-50,3-7
+AL,AL West,Angels,63,99,.389,25.5,32-49,31-50,1-9
+NL,NL East,Phillies,95,67,.586,0.0,54-27,41-40,4-6
+NL,NL East,Braves,89,73,.549,6.0,46-35,43-38,7-3
+NL,NL East,Mets,89,73,.549,6.0,46-35,43-38,5-5
+NL,NL East,Nationals,71,91,.438,24.0,38-43,33-48,3-7
+NL,NL East,Marlins,62,100,.383,33.0,30-51,32-49,6-4
+NL,NL Central,Brewers,93,69,.574,0.0,47-34,46-35,5-5
+NL,NL Central,Cubs,83,79,.512,10.0,44-37,39-42,6-4
+NL,NL Central,Cardinals,83,79,.512,10.0,44-37,39-42,6-4
+NL,NL Central,Reds,77,85,.475,16.0,39-42,38-43,3-7
+NL,NL Central,Pirates,76,86,.469,17.0,39-42,37-44,5-5
+NL,NL West,Dodgers,98,64,.605,0.0,52-29,46-35,8-2
+NL,NL West,Padres,93,69,.574,5.0,45-36,48-33,7-3
+NL,NL West,Diamondbacks,89,73,.549,9.0,44-37,45-36,5-5
+NL,NL West,Giants,80,82,.494,18.0,42-39,38-43,6-4
+NL,NL West,Rockies,61,101,.377,37.0,37-44,24-57,2-8
+"""
+
+mlb_df = pd.read_csv(StringIO(mlb_data))
+
+
+```
+
+
+
+- [2024 NFL Standings - StatMuse](https://www.statmuse.com/ask?query=2024+nfl+standings&preferred_domain=&direct=true&l=&t=1759206685574)
+The NBA standings data was sourced from StatMuse:
+- [2024 NBA Standings - StatMuse](https://www.statmuse.com/nba/ask/nba-2024-standings)
+The MLB standings data was sourced from StatMuse:
+- [2024 MLB Standings - StatMuse](https://www.statmuse.com/mlb/ask/mlb-standings-for-2024)
+```{python}
+
+print("NFL Standings (head):")
+print(nfl_df.head())
+
+print("\nNBA Standings (head):")
+print(nba_df.head())
+
+print("\nMLB Standings (head):")
+print(mlb_df.head())
+
+```
+
+
 
 ## Results in Table Format
 | Sport | Home Win % (2024) |
