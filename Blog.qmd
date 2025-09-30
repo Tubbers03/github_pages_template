@@ -16,6 +16,7 @@ Growing up, I always heard that the home team had a major chance of winning the 
 So, I wanted to see if home field actually made a *difference* in the win column.
 
 ## Dataset Overview
+To begin becoming someone who uses data, you fisrt need to obtain your data. You want data that is useful to find the answer to youre question. I went to statmuse and got the standings data from the NFL, NBA, and MLB. I then put the data into data frames.
 ```{python}
 #| echo: false
 #| output: false
@@ -140,7 +141,7 @@ mlb_df = pd.read_csv(StringIO(mlb_data))
 ```
 
 
-
+The NFL standings data was sourced from StatMuse:
 - [2024 NFL Standings - StatMuse](https://www.statmuse.com/ask?query=2024+nfl+standings&preferred_domain=&direct=true&l=&t=1759206685574)
 The NBA standings data was sourced from StatMuse:
 - [2024 NBA Standings - StatMuse](https://www.statmuse.com/nba/ask/nba-2024-standings)
