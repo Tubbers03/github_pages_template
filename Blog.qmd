@@ -14,9 +14,11 @@ jupyter: python3
 
 ## Introduction: Is the "Home Advantage" Real?
 Growing up, I always heard that the home team had a major chance of winning the game because of plenty of factors: 
-+ **Fans to cheer them on** 
-+ **It's the facility they practice in**
--+**The team gets to sleep in their own beds and city**
+
+- **Fans to cheer them on** 
+- **It's the facility they practice in**
+- **The team gets to sleep in their own beds and city**
+
 So, I wanted to see if home field actually made a *difference* in the win column.
 
 ## Dataset Overview
@@ -197,15 +199,26 @@ plt.show()
 ```
 
 ## A Bit of Math: Interpreting Win Rate
-So, to get the win rate I added all the wins from each team at home, and then I divided the total wins by the total number of games.
+So, to get the win rate I added all the wins from each team at home, and then I divided the total wins by the total number of games. Mathematically, it looks something like this:
+Home Win Rate
+=
+Total Home Wins
+Total Home Games
+Home Win Rate= 
+Total Home Games
+Total Home Wins
+​	
+ This gives us the percentage of games that were won by the home team. It's a straightforward approach, but it gives us valuable insight into whether playing at home really provides a competitive edge. While a few percentage points may not seem like much, over the course of hundreds or even thousands of games, those margins can matter — especially in playoff races and tight seasons.
 
 ## Conclusion: The Advantage Is Real (Sometimes)
 Looking at the data, it's clear that home teams do tend to win slightly more often across all three major leagues. However, **this advantage isn't absolute**. It depends heavily on the team. Some teams had losing records overall but were surprisingly strong at home. Others were consistent regardless of location. And, some strong teams rarely lost at home. This suggests that while playing at home may help, it’s not a guarantee of success — the strength of the team still matters more.
 
 ## Call to Action: Dig Deeper!
 If you're curious about how much home or away performance contributes to a team's success, the full data is right here in the project. Dive into the dataframes and ask your own questions:
+
 - Which team had the biggest difference between home and road records?
 - Are bad teams just worse on the road, or bad everywhere?
 - Which divisions or conferences have the strongest home field trends?
+
 Use the tools of data science — slicing, filtering, visualizing and start exploring!
 
